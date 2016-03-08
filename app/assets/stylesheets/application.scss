@@ -11,24 +11,25 @@
  * file per style scope.
  *
  */
- //Import bootstrap-sprockets
- @import "bootstrap-sprockets";
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
 
- // Import cerulean variables
- @import "bootswatch/flatly/variables";
+// Import cerulean variables
+@import "bootswatch/flatly/variables";
 
- // Then bootstrap itself
- @import "bootstrap";
+// Then bootstrap itself
+@import "bootstrap";
 
- // And finally bootswatch style itself
- @import "bootswatch/flatly/bootswatch";
+// And finally bootswatch style itself
+@import "bootswatch/flatly/bootswatch";
 
- // First set or import your overrides
- // $textColor: #000;
+// First set or import your overrides
+// $textColor: #000;
 
- // Then load variables
- // @import "bootswatch/journal/variables";
+// Then load variables
+// @import "bootswatch/journal/variables";
 
- // font awesome
- @import "font-awesome";
- @import "rails_bootstrap_forms";
+// font awesome
+@import "font-awesome";
+@import "rails_bootstrap_forms";
+@import "users";
