@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309224135) do
+ActiveRecord::Schema.define(version: 20160309224918) do
 
   create_table "instructors", force: :cascade do |t|
     t.text     "uid"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20160309224135) do
     t.text     "last"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.text     "uid"
+    t.text     "comment"
+    t.text     "term"
+    t.text     "name"
+    t.text     "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
