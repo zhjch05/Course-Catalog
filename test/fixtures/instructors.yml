@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyText
+  comment: MyText
+  email: MyText
+  first: MyText
+  middle: MyText
+  last: MyText
+
+two:
+  uid: MyText
+  comment: MyText
+  email: MyText
+  first: MyText
+  middle: MyText
+  last: MyText
