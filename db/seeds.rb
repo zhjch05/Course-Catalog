@@ -5,3 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'json'
+Instructor.delete_all
+Subject.delete_all
+Course.delete_all
+
+JSON.parse(open("instructor.json").read).each do |entry|
+  Instructor.create(uid: entry["id"], comment: entry["comment"], email: entry["email"], first: entry["first"], middle: entry["middle"], last: entry["last"])
+end
+
+JSON.parse(open("subject.json").read).each do |entry|
+  Subject.create(uid: entry["id"], comment: entry["comment"], term: entry["term"], name: entry["name"], abbreviation: entry["abbreviation"])
+end
+
+JSON.parse(open("course.json").read).each do |entry|
+  Course.create(uid: entry["id"], comment: entry["comment"], code: entry["code"], continuity_id: entry["continuity_id"], name: entry["name"], description: entry["description"], credits: entry["credits"], independent_study: entry["independent_study"])
+end
+
+#
+# t.text     "uid"
+# t.text     "comment"
+# t.text     "code"
+# t.text     "continuity_id"
+# t.text     "name"
+# t.text     "description"
+# t.text     "credits"
+# t.boolean  "independent_study"
