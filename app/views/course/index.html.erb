@@ -1,2 +1,16 @@
-<h1>Course#index</h1>
-<p>Find me in app/views/course/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+      <tr>
+    <% end %>
+  <tbody>
+<table>

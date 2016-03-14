@@ -1,2 +1,16 @@
-<h1>Subject#index</h1>
-<p>Find me in app/views/subject/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Abbr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= subject.abbreviation %></td>
+      <tr>
+    <% end %>
+  <tbody>
+<table>
