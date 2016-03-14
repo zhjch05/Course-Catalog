@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class SubjectController < ApplicationController
   before_action :authenticate_user!
   def index
   end

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'course/index'
+
+  get 'subject/index'
+
+  get 'instructor/index'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
