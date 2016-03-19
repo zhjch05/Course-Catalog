@@ -19,7 +19,13 @@ JSON.parse(open("subject.json").read).each do |entry|
 end
 
 JSON.parse(open("course.json").read).each do |entry|
-  Course.create(uid: entry["id"], comment: entry["comment"], code: entry["code"], continuity_id: entry["continuity_id"], name: entry["name"], description: entry["description"], credits: entry["credits"], independent_study: entry["independent_study"])
+  course = Course.create(uid: entry["id"], comment: entry["comment"], code: entry["code"], continuity_id: entry["continuity_id"], name: entry["name"], description: entry["description"], credits: entry["credits"], independent_study: entry["independent_study"])
+  entry["subjects"].each do |subject_hash|
+    subject_id = subject_hash["id"]
+    course_id = course.id
+    subject = Subject.find_by(uid: subject_id)
+    CourseSubject.create(course_id: course_id, subject_id: subject_id)
+  end
 end
 
 #
