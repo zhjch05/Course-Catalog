@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319201610) do
+ActiveRecord::Schema.define(version: 20160319202736) do
+
+  create_table "course_subjects", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "subject_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.text     "uid"
