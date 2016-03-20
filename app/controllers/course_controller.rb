@@ -1,6 +1,10 @@
 class CourseController < ApplicationController
   before_action :authenticate_user!
   def index
-    @courses = Course.all.uniq.order(:name)
+    if params[:search]
+      @courses = Course.search(params[:search]).order(:name)
+    else
+      @courses = Course.all.uniq.order(:name)
+    end
   end
 end

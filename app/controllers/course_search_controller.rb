@@ -1,0 +1,2 @@
+class CourseSearchController < ApplicationController
+end

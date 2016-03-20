@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'course_search/index'
+
   get 'course/index'
 
   get 'subject/index'
