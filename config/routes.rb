@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'enrollment/index'
+
+  post 'enrollment/create'
+
   get 'course_search/index'
 
   get 'course/index'

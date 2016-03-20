@@ -1,2 +1,18 @@
 <p>Email is <%= current_user.email%></p>
 <p>Last sign in: <%= current_user.last_sign_in_at%></p>
+<table>
+    <thead>
+        <tr>
+            <th>Course enrolled name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @courses_enrolled.each do |course| %>
+            <tr>
+                <td><%= course.name %></td>
+                <td><%= course.description %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

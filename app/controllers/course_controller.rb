@@ -1,5 +1,6 @@
 class CourseController < ApplicationController
   before_action :authenticate_user!
+  helper_method :include
   def index
     if params[:subject].present?
       @courses = Subject.find_by_id(params[:subject]).courses
@@ -9,5 +10,10 @@ class CourseController < ApplicationController
     if params[:search]
       @courses = @courses.search(params[:search]).order(:name)
     end
+    @enrollment = Enrollment.new
+  end
+
+  def include(course)
+    current_user.courses.find_by_id(course.id)
   end
 end
