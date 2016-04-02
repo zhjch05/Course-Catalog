@@ -1,0 +1,34 @@
+<% if @courses.present? %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Enrollment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <% if include(course) %>
+            <td>
+                Enrolled
+            </td>
+        <% else %>
+            <td>
+                <%= form_for @enrollment, url: enrollment_create_path(@enrollment), method: :post, class:"form-inline" do |f|%>
+                    <%= hidden_field_tag :course_id, course.id %>
+                    <%= hidden_field_tag :user_id, current_user.id %>
+                    <%= f.submit value:"Enroll", class:"btn btn-primary"%>
+                <% end %>
+            </td>
+        <% end %>
+      <tr>
+    <% end %>
+  <tbody>
+<table>
+<% else %>
+<p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>

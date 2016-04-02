@@ -5,6 +5,10 @@ class Course < ActiveRecord::Base
   has_many :subjects, through: :course_subjects
 
   def self.search(search)
-    where('name LIKE ?', "%#{search}%")
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
   end
 end
