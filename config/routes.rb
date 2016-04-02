@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   post 'enrollment/create'
 
-  get 'course_search/index'
-
   get 'course/index'
 
   get 'subject/index'
