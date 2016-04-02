@@ -1,6 +1,5 @@
 <%= form_tag(course_index_path, :method => "get", id:"course_search", class: "form-inline", remote: true) do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Courses", class: "form-control", id: "course_text" %>
 <%= select_tag "subject", options_from_collection_for_select(@subjects, "id", "name"), include_blank: true, class: "form-control" %>
-<%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 <div id="course_list"><%= render 'course_list' %></div>
