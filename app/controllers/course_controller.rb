@@ -11,6 +11,12 @@ class CourseController < ApplicationController
       @courses = @courses.search(params[:search]).order(:name)
     end
     @enrollment = Enrollment.new
+    @subjects = Subject.all.uniq.order(:name)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def include(course)
