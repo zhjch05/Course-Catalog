@@ -4,3 +4,6 @@
 $ ->
   $("#course_text").keyup ->
     $("#course_search").trigger("submit.rails")
+
+  $("#subject").change ->
+    $("#course_search").trigger("submit.rails")
